@@ -1,9 +1,12 @@
 #login{ float: right; }
 #login img{ width: 32px; margin: 6px; }
 
+*{
+    font-family: sans-serif, Verdana, Tahoma;
+}
 
 /** Comments **/
-.comment{
+/*.comment{
     padding: 15px 0px 15px 0px;
     margin-top: 10px;
     font-size: 12px;
@@ -25,4 +28,61 @@
 }
 a.reply{ font-size: 10px; text-transform: uppercase }
 small{ font-size: 11px; }
-.delcomment{ color:red; float: right; }
+.delcomment{ color:red; float: right; }*/
+
+/** Base **/
+a{ color: #666; text-decoration: underline; cursor: pointer; cursor: hand;}
+a:hover{ color: #000; cursor: hand; }
+a.btn{ text-decoration: none; }
+.button{
+    color: #FFF;
+    background: #AD0010;
+    border: 3px solid #DDD;
+    border-radius: 25%;
+    -moz-border-radius: 25%;
+    -webkit-border-radius: 25%;    
+}
+
+/** Head **/
+a.brand{
+    font-family: 'Denk One', sans-serif;
+    text-decoration: none;
+    font-size: 31px !important;
+    color: #AD0010 !important;
+}
+img.mini{
+    border-radius: 50%;
+    border: 3px solid #DDD;
+}
+
+/** Post **/
+.post h2 a, .post h1{
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: #333;
+    font-size: 25px;
+}
+.post pre{
+    background: none;
+    border: none;
+    padding: 0;
+}
+.post .author{
+    width: 94px;
+    float: right;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    font-size: 10px;
+}
+.post .author .avatar{ margin-bottom: 5px; }
+
+/** Profile **/
+.avatar{
+    margin: 0 auto;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: 3px solid #DDD;
+    margin: 10px;
+    float: left;
+}

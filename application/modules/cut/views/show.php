@@ -1,0 +1,1 @@
+<a href="<?= site_url('blog/show/'.$post_id) ?>.html" class="read-more">Подробнее&hellip;</a>

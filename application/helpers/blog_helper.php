@@ -75,10 +75,10 @@ function post_control( $post ){
     
     if( user_is('admin') OR ($user['id'] == $post['user_id']) ){
         ?>
-        <div class="btn-toolbar">
-            <a href="<?= site_url( 'post/form/'.$post['id'] ) ?>" class="btn btn-success"><i class="icon-pencil icon-white"></i> Редактировать</a>
-            <a href="#" class="btn btn-danger delete" id="destroy-<?= $post['id'] ?>"><i class="icon-trash icon-white"></i> Удалить</a>
-        </div>
+        <span class="post-control">
+            <a href="<?= site_url( 'post/form/'.$post['id'] ) ?>"  title="Редактировать"><i class="icon-pencil"></i></a>
+            <a href="#" class="delete" id="destroy-<?= $post['id'] ?>" title="Удалить"><i class="icon-trash"></i></a>
+        </span>
         <?
     
     }

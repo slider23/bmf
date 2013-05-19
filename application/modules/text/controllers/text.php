@@ -48,7 +48,7 @@ class TextController extends MY_Module{
         $data['original'] = param('original', TRUE, FALSE);
         $this->text->save( $data ); // keep in safe place ;)
         set_flash_ok('Текст сохранён');
-        redirect( 'post/form/'.$post_id.'/'.$module_id.'#mod-'.$module_id );
+        redirect( 'post/form/'.$post_id.'#mod-'.$module_id );
     }
     
     /**

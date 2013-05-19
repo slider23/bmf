@@ -399,7 +399,7 @@ function prepare_text( $text ){
     CI()->jevix->cfgSetTagPreformatted(array('pre'));
 
     // 4. Устанавливаем теги, которые необходимо вырезать из текста вместе с контентом.
-    CI()->jevix->cfgSetTagCutWithContent(array('script', 'object', 'iframe', 'style'));
+    // CI()->jevix->cfgSetTagCutWithContent(array('script', 'object', 'iframe', 'style'));
 
     // 5. Устанавливаем разрешённые параметры тегов. Также можно устанавливать допустимые значения этих параметров.
     CI()->jevix->cfgAllowTagParams('a', array('title', 'href'));
@@ -430,7 +430,7 @@ function prepare_text( $text ){
     CI()->jevix->cfgSetAutoBrMode(TRUE);
 
     // 12. Включаем или выключаем режим автоматического определения ссылок. (по умолчанию включен)
-    CI()->jevix->cfgSetAutoLinkMode(true);
+    CI()->jevix->cfgSetAutoLinkMode(TRUE);
 
     // 13. Отключаем типографирование в определенном теге
     CI()->jevix->cfgSetTagNoTypography('code');

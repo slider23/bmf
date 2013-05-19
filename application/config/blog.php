@@ -12,9 +12,9 @@ $config['blog']['modules'] = array(
     'code' => array(
         'name' => 'Код'
     ),
-    'photo' => array(
-        'name' => 'Фото'
-    ),
+    // 'photo' => array(
+    //     'name' => 'Фото'
+    // ),
     'cut' => array(
         'name' => 'Подкат'
     ),

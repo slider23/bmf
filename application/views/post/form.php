@@ -3,7 +3,6 @@
     <?= form_open_multipart(current_url(), array('id' => 'post_form', 'class'=>'well form-horizontal')) ?>
     <fieldset>
         <legend>Свойства топика</legend>
-        <hr/>
         <div class="error"><?php echo validation_errors(); ?></div>
         <div class="control-group">
             <label class="control-label">Заголовок топика:</label>
@@ -14,11 +13,8 @@
         <div class="control-group">
             <label class="control-label">Тэги через запятую:</label>
             <div class="controls">
-                <input type="text" class="input-xlarge"  id="tags" name="tags" value="<?= form_prep($post['tags']) ?>" />
+                <input type="text" class="input-xlarge"  id="tags" name="tags" value="<?= form_prep($post['tags']) ?>" /> <input type="submit" class="btn btn-primary" value="Сохранить" />
             </div>
-        </div>
-        <div class="controls">
-            <input type="submit" class="btn btn-primary" value="Сохранить" />
         </div>
     </fieldset>
     <?= form_close() ?>
@@ -34,7 +30,7 @@
             <li>
                 <a name="mod-<?= $module['id'] ?>"></a>
                 <div id="title_<?= $module['id']?>" class="row module-title">
-                    <strong><?= $module['name'] ?></strong>
+                    <strong><?= mb_strtoupper($module['name']) ?></strong>
                     <? if( $module['id'] != $module_id ){ ?>
                         <span class="module-control">
                         <a href="<?= site_url('post/form/'.$post['id'].'/'.$module['id'].'#mod-'.$module['id'] ) ?>" class="btn btn-info"><i class="icon-pencil icon-white"></i> Редактировать</a>
@@ -72,8 +68,8 @@
     <div class="span12">
         <div class="form-actions">
             <a href="<?= site_url('post/publish/'.$post['id']) ?>" class="btn btn-success">Опубликовать</a>
-            <a href="<?= site_url('post/preview/'.$post['id']) ?>" class="btn" target="_blank">Предпросмотр</a>
-            <a href="<?= site_url('post/draft/'.$post['id']) ?>" class="btn btn-inverse">Сохранить в черновиках</a>
+            <!--a href="<?= site_url('post/preview/'.$post['id']) ?>" class="btn" target="_blank">Предпросмотр</a>
+            <a href="<?= site_url('post/draft/'.$post['id']) ?>" class="btn btn-inverse">Сохранить в черновиках</a-->
         </div>
     </div>
 </div>

@@ -114,8 +114,10 @@ class PostController extends MY_Controller {
         $this->call_modules( $post_id );
         $post['cut'] = $post['full'] = '';
         $saw_cut = FALSE;
+        $this->template->set( 'post', $post );
         foreach( $this->data['modules'] as $i=>$module ){
             if( $module['name'] == 'cut' ){
+                $post['cut'] .= $module['output'];
                 $saw_cut = TRUE;
                 continue;
             }
@@ -128,8 +130,8 @@ class PostController extends MY_Controller {
     }
     
     public function draft( ){
-        
     }
+
     /**
      *
      * @param type $post_id
@@ -208,7 +210,7 @@ class PostController extends MY_Controller {
             $text['short'] = mb_strcut(strip_tags_regular($text['full']), 0, 250);
             $this->text->save($text);
             set_flash_ok($msg);
-            redirect(post_link($post));
+            redirect( post_link($post) );
         }
         return $this;
     }
@@ -260,7 +262,7 @@ class PostController extends MY_Controller {
         $post = $this->post->find($id, 1);
         // who is author?
         if (!user_is('admin') AND ($post['user_id'] != $this->current_user['id']))
-            return $this->ajax(array('error' => 'Увы, вы можете только удалять свои топики'));
+            return $this->ajax(array('error' => 'Вы можете удалять только свои топики'));
         // mark it as deleted
         $this->post->save(array('id' => $id, 'deleted' => 1));
 
