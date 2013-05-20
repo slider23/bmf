@@ -19,7 +19,7 @@
         <div class="control-group">
             <label class="control-label">Тэги через запятую:</label>
             <div class="controls">
-                <input type="text" class="input-xlarge"  id="tags" name="tags" value="<?= form_prep($post['tags']) ?>" /> <input type="submit" class="btn btn-primary" value="Сохранить" />
+                <input type="text" class="input-xlarge"  id="tags" name="tags" value="<?= form_prep($post['tags']) ?>" /> <button class="btn btn-primary"><span class="icon icon-white icon-hdd"></span> Сохранить</button>
             </div>
         </div>
     </fieldset>
@@ -30,13 +30,13 @@
 <? if( !empty($post['id']) ){ ?>
 
     <div class="row">
-        <div class="span12">        
-        <ul class="m-list">
+        <div class="span12">
+        <ul class="modules-list" >
         <? foreach( $modules as $module ){ ?>
-            <li>
-                <a name="mod-<?= $module['id'] ?>"></a>
-                <div id="title_<?= $module['id']?>" class="row module-title">
-                    <strong><?= mb_strtoupper($module['name']) ?></strong>
+            <li class="module-li">
+                <div id="title_<?= $module['id']?>" class="module-title">
+                    <a name="mod-<?= $module['id'] ?>"></a>
+                    <span class="icon icon-th-large"></span>
                     <? if( $module['id'] != $module_id ){ ?>
                         <span class="module-control">
                         <a href="<?= site_url('post/form/'.$post['id'].'/'.$module['id'].'#mod-'.$module['id'] ) ?>" class="btn btn-info"><i class="icon-pencil icon-white"></i> Редактировать</a>
@@ -45,7 +45,7 @@
                     <? } ?>
                 </div>
                 <br class="clear"/>
-                <div id="module_<?= $module['id']?>" class="row">
+                <div id="module_<?= $module['id']?>" class="module-content">
                     <?= $module['output'] ?>
                 </div>
             </li>
@@ -73,7 +73,7 @@
 <div class="row">
     <div class="span12">
         <div class="form-actions">
-            <a href="<?= site_url('post/publish/'.$post['id']) ?>" class="btn btn-success">Опубликовать</a>
+            <a href="<?= site_url('post/publish/'.$post['id']) ?>" class="btn btn-primary"><span class="icon icon-ok-circle icon-white"></span> Опубликовать</a>
             <!--a href="<?= site_url('post/preview/'.$post['id']) ?>" class="btn" target="_blank">Предпросмотр</a>
             <a href="<?= site_url('post/draft/'.$post['id']) ?>" class="btn btn-inverse">Сохранить в черновиках</a-->
         </div>

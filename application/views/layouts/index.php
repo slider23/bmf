@@ -3,9 +3,16 @@
     <head>
         <meta charset="utf-8">
         <title><?= not_empty($post['title'], '') ?> Gems from Hell</title>
+        <meta name="title" content="<?= form_prep(not_empty($post['title'], '')) ?> Gems from Hell" />
+        <meta name="description" content="<?= form_prep(not_empty($post['description'], 'Gems from Hell')) ?>" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
+        <meta property="og:title" content="<?= form_prep(not_empty($post['title'], '')) ?> Gems from Hell" />
+        <meta property="og:description" content="<?= form_prep(not_empty($post['description'], 'Gems from Hell')) ?>" />
+        <meta property="og:url" content="http://gemsfromhell.com<?= current_url() ?>" />
+        <meta name='yandex-verification' content='654cd8a0f7b91402' />
+
+        <script type="text/javascript" src="<?= site_url('static/js/jquery-1.9.1.min.js') ?>"></script>
 
         <link href="<?= site_url('static/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
         <!--[if lt IE 9]>
@@ -21,14 +28,6 @@
         <link rel="stylesheet" type="text/css" href="<?= site_url('static/css/flash.css') ?>">
         <link rel="stylesheet" type="text/css" href="<?= site_url('static/jqueryui/blitzer/jquery-ui-1.8.19.custom.css') ?>" />
         <link rel="stylesheet" type="text/css" href="<?= site_url('static/highlightjs/monokai.css') ?>" />
-
-
-      <meta property="og:title" content="<?= form_prep(not_empty($post['title'], '')) ?> Gems from Hell" />
-      <meta property="og:description" content="<?= form_prep(not_empty($post['description'], 'Gems from Hell')) ?>" />
-      <meta property="og:url" content="http://gemsfromhell.com<?= current_url() ?>" />
-      <meta name="title" content="<?= form_prep(not_empty($post['title'], '')) ?> Gems from Hell" />
-      <meta name="description" content="<?= form_prep(not_empty($post['description'], 'Gems from Hell')) ?>" />
-      <meta name='yandex-verification' content='654cd8a0f7b91402' />
     </head>
 
     <body>
@@ -68,7 +67,6 @@
             </footer>
         </div>
 
-        <script type="text/javascript" src="<?= site_url('static/js/jquery-1.9.1.min.js') ?>"></script>
         <script type="text/javascript" src="<?= site_url('static/js/bmf.js') ?>"></script>
         <script type="text/javascript" src="<?= site_url('static/js/jquery.pnotify.min.js') ?>"></script>
         <script type="text/javascript" src="<?= site_url('static/jqueryui/jquery-ui-1.8.19.custom.min.js') ?>"></script>        

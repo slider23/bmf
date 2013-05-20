@@ -8,11 +8,17 @@ body {
     height: 200px;
 }
 
-ul.m-list{
+ul.modules-list{
     list-style: none;
+    margin:0;
+    padding:0;
 }
-ul.m-list li{
-    margin-bottom: 20px;
+ul.modules-list > li{
+    padding: 10px;
+    margin:0;
+    margin-bottom: 10px;
+    border: 1px solid #FFF;
+    border-radius: 15px;
 }
 .module-title{
     height: 32px;
@@ -21,7 +27,10 @@ ul.m-list li{
     float: right;
     display: none;
 }
-ul.m-list li:hover .module-control{
+ul.modules-list > li:hover{
+    border: 1px solid #DDD;
+}
+ul.modules-list > li:hover .module-control{
     display: block;
 }
 
@@ -49,3 +58,7 @@ ul.m-list li:hover .module-control{
 a.reply{ font-size: 10px; text-transform: uppercase }
 small{ font-size: 11px; }
 .delcomment{ color:red; float: right; }*/
+
+textarea.markItUpEditor{
+    width: 99%;
+}

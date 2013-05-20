@@ -390,7 +390,7 @@ function prepare_text( $text ){
     CI()->load->library('jevix');
 
     // 1. Устанавливаем разрешённые теги. (Все не разрешенные теги считаются запрещенными.)
-    CI()->jevix->cfgAllowTags(array('a', 'img', 'i', 'b', 'u', 'em', 'strong', 'nobr', 'li', 'ol', 'ul', 'sup', 'abbr', 'pre', 'acronym', 'h3', 'h2', 'h4', 'h5', 'h6', 'adabracut', 'br', 'code'));
+    CI()->jevix->cfgAllowTags(array('a', 'img', 'i', 'b', 'u', 'em', 'strong', 'nobr', 'li', 'ol', 'ul', 'sup', 'abbr', 'pre', 'acronym', 'h1', 'h3', 'h2', 'h4', 'h5', 'h6', 'adabracut', 'br', 'code'));
 
     // 2. Устанавливаем коротие теги. (не имеющие закрывающего тега)
     CI()->jevix->cfgSetTagShort(array('br','img'));
