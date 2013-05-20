@@ -23,7 +23,7 @@ class TextController extends MY_Module{
             $this->data['text'] = $this->text->find( $this->module_id, 1 );
             return $this->template->render( $this->view.'show', $this->data );
         }else{
-            return '--- empty ---';
+            return '';
         }
     }
     

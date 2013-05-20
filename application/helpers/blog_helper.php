@@ -84,6 +84,20 @@ function post_control( $post ){
     }
 }
 
+function post_form_path( $post, $module_id='' ){
+    return site_url( 'post/form/'.$post['id'].'/'.$module_id );    
+}
+function post_form_save_path( $post, $module_id='' ){
+    return site_url( 'post/form/'.$post['id'].'#mod-'.$module_id );    
+}
+
+function blog_post_path( $post ){
+    return site_url( 'blog/post/'.$post['id'] );
+}
+function edit_blog_post_path( $post, $module_id ){
+    return site_url( 'blog/post/'.$post['id'].'/'.$module_id.'#mod-'.$module_id );
+}
+
 function post_link( $post ){
     $type = array_search( $post['type'], blog_types() );
     $alias = form_prep( nice_title( $post['title'] ) );

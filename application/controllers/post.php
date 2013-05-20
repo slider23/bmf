@@ -153,6 +153,9 @@ class PostController extends MY_Controller {
     
     public function module_delete( $post_id, $module_id ){
         $module = $this->module->find( $module_id, 1 );
+        $post = $this->post->find( $post_id, 1 );
+        user_can_rule( $post );
+        
         if( empty($module) ){
             set_flash_error( 'Не удалось найти этот модуль' );
             redirect( 'post/form/'.$post_id );
@@ -163,7 +166,7 @@ class PostController extends MY_Controller {
         
         $this->module->delete( $module_id );
         set_flash_ok( 'Блок успешно удалён' );
-        redirect( 'post/form/'.$post_id.'/'.$module_id );
+        redirect( post_form_save_path( $post, $module_id) );
     }
 
     /**
