@@ -86,8 +86,8 @@ function post_control( $post ){
 
 function post_link( $post ){
     $type = array_search( $post['type'], blog_types() );
-    $alias = nice_title( $post['title'] );
-    return site_url( 'blog/show/'.$post['id'].'.html' );
+    $alias = form_prep( nice_title( $post['title'] ) );
+    return site_url( 'blog/show/'.$post['id'].'-'.$alias.'.html' );
 }
 
 

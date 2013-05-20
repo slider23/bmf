@@ -54,6 +54,7 @@ img.mini{
     border-radius: 50%;
     border: 3px solid #DDD;
 }
+a.rss{ color: #AD0010 !important; }
 
 /** Post **/
 .post h2 a, .post h1{

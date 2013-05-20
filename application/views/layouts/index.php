@@ -24,8 +24,10 @@
 
 
       <meta property="og:title" content="<?= form_prep(not_empty($post['title'], '')) ?> Gems from Hell" />
+      <meta property="og:description" content="<?= form_prep(not_empty($post['description'], 'Gems from Hell')) ?>" />
       <meta property="og:url" content="http://gemsfromhell.com<?= current_url() ?>" />
       <meta name="title" content="<?= form_prep(not_empty($post['title'], '')) ?> Gems from Hell" />
+      <meta name="description" content="<?= form_prep(not_empty($post['description'], 'Gems from Hell')) ?>" />
       <meta name='yandex-verification' content='654cd8a0f7b91402' />
     </head>
 
@@ -40,6 +42,7 @@
                         <ul class="nav">
                             <li><a href="/">Главная</a></li>
                             <li><a href="/page/about">О блоге</a></li>
+                            <li><a href="/blog/feed.rss" class="rss"><span class="icon icon-fire"></span>RSS</a></li>
                         </ul>
                     </div>
                     

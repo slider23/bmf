@@ -1,1 +1,1 @@
-<a href="<?= site_url('blog/show/'.$post_id) ?>.html" class="read-more">Подробнее&hellip;</a>
+<a href="<?= post_link( $post ) ?>" class="read-more">Подробнее&hellip;</a>

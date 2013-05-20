@@ -41,7 +41,7 @@ class PostController extends MY_Controller {
         if (!empty($id) AND empty($_POST)) {
             $this->data['post'] = $this->post->find($id, 1);
         } else {
-            $post = params(array('title', 'tags', 'category_id',));
+            $post = params(array('title', 'description', 'tags', 'category_id',));
             $post['id'] = $id;
             $this->data['data'] = $post;
         }
@@ -111,7 +111,7 @@ class PostController extends MY_Controller {
         $post = array(
             'id' => $post['id']
         );
-        $this->call_modules( $post_id );
+        $this->call_modules( $post_id, $post );
         $post['cut'] = $post['full'] = '';
         $saw_cut = FALSE;
         $this->template->set( 'post', $post );
@@ -138,14 +138,15 @@ class PostController extends MY_Controller {
      * @param type $module_id
      * @return type 
      */
-    protected function call_modules( $post_id, $module_id='' ){
-        if( empty($this->data['modules']) ){
+    protected function call_modules( $post_id, $module_id='', $post=array() ){
+        if( empty($this->data['modules']) )
             $this->data['modules'] = $this->module->find_all_for_post( $post_id );
-        }
+        
         foreach( $this->data['modules'] as $i=>$module ){
             $name = $module['name'];
             $method = ($module['id'] == $module_id) ? 'form' : 'show';
             Modules::run( $name.'/set_params', $post_id, $module['id'] );
+            if( !empty($post) ) Modules::run( $name.'/set_params', $post );
             $this->data['modules'][$i]['output'] = Modules::run( $name.'/'.$method );
         }
         return $this->data['modules'];

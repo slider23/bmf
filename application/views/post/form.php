@@ -11,6 +11,12 @@
             </div>
         </div>
         <div class="control-group">
+            <label class="control-label">Описание (meta):</label>
+            <div class="controls">
+                <input type="text" class="input-xlarge"  id="description" name="description" value="<?= form_prep($post['description']) ?>" />
+            </div>
+        </div>
+        <div class="control-group">
             <label class="control-label">Тэги через запятую:</label>
             <div class="controls">
                 <input type="text" class="input-xlarge"  id="tags" name="tags" value="<?= form_prep($post['tags']) ?>" /> <input type="submit" class="btn btn-primary" value="Сохранить" />

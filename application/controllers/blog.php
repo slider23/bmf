@@ -9,6 +9,12 @@ class BlogController extends MY_Controller{
         parent::__construct( 'blog' );
         $this->load->model( array('post', 'text/text', 'tag', 'comment') );        
      }
+
+     public function feed(){
+        $this->data['posts'] = $this->post->find_published( 15, 0 ); // 15 last posts 
+        $this->output->set_content_type( 'application/rss+xml' );
+        $this->template->show( $this->view.'feed', $this->data );
+     }
     
     /**
      * Shows posts feed on main page
