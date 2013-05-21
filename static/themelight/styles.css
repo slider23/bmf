@@ -1,4 +1,3 @@
-#login{ float: right; }
 #login img{ width: 32px; margin: 6px; }
 
 *{
@@ -55,6 +54,7 @@ img.mini{
     border: 3px solid #DDD;
 }
 a.rss{ color: #AD0010 !important; }
+.nav-avatar > a{ margin:0 !important; padding:0 !important;}
 
 /** Post **/
 .post h2 a, .post h1{

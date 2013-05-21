@@ -37,24 +37,22 @@
             <div class="navbar-inner">
                 <div class="container">
                     <a class="brand" href="/">Gems from Hell</a>
-                    <div class="nav-collapse">
-                        <ul class="nav">
-                            <li><a href="/">Главная</a></li>
-                            <li><a href="/page/about">О блоге</a></li>
-                            <li><a href="/blog/feed.rss" class="rss"><span class="icon icon-fire"></span>RSS</a></li>
-                        </ul>
-                    </div>
+                    <ul class="nav">
+                        <li><a href="/">Главная</a></li>
+                        <li><a href="/page/about">О блоге</a></li>
+                        <li><a href="/blog/feed.rss" class="rss"><span class="icon icon-fire"></span>RSS</a></li>
+                    </ul>
                     
-                    <div id="login">
+                    <ul class="nav pull-right" id="login">
                         <? if (user_signed_in()) {
                             $user = current_user();
                             ?>
-                            <? if (user_is('admin')) echo anchor('post/form', 'Создать топик'); ?>
-                            <?= user_avatar($user, 'mini') ?> <?= anchor('user/profile/' . $user['login'], $user['login']) ?> | <?= anchor('user/logout', 'Выйти') ?>
+                            <? if (user_is('admin')) echo '<li>'.anchor('post/form', 'Создать топик').'</li>'; ?>
+                            <li class="nav-avatar"><?= user_avatar($user, 'mini') ?></li><li><?= anchor('user/profile/' . $user['login'], $user['login']) ?></li><li><?= anchor('user/logout', 'Выйти') ?></li>
                         <? }else { ?>
-                            <?= anchor('user/login', 'Войти') ?> <? /*| <?= anchor('user/register', 'Регистрация') ?> */ ?>
-                        <? } ?>                    
-                    </div>
+                            <li><a href="<?= site_url('user/login') ?>"><span class="icon icon-user"></span> Войти</a></li><? /*| <?= anchor('user/register', 'Регистрация') ?> */ ?>
+                        <? } ?> 
+                    </ul>
 
                 </div>
             </div>

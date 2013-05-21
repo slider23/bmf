@@ -14,15 +14,24 @@ if( empty($post) ){
         <hr/>
         <div class="share">
           <noindex>
-<script type="text/javascript">(function() {
- if (window.pluso)if (typeof window.pluso.start == "function") return;
- var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
- s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
- s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
- var h=d[g]('head')[0] || d[g]('body')[0];
- h.appendChild(s);
-})();</script>
-<div class="pluso" data-options="medium,round,line,horizontal,counter,theme=04" data-services="vkontakte,facebook,livejournal,twitter,odnoklassniki,google,moimir,moikrug,evernote,email,bookmark,print" data-background="transparent"></div>          
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_vk"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_livejournal"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_button_blogger"></a>
+<a class="addthis_button_evernote"></a>
+<a class="addthis_button_delicious"></a>
+<a class="addthis_button_digg"></a>
+<a class="addthis_button_moikrug"></a>
+<a class="addthis_button_myspace"></a>
+<a class="addthis_button_odnoklassniki_ru"></a>
+<a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=undefined"></script>
+<!-- AddThis Button END -->
           </noindex>
         </div>
         <hr/>
