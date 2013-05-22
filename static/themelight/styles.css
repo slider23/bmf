@@ -76,6 +76,17 @@ a.rss{ color: #AD0010 !important; }
     font-size: 10px;
 }
 .post .author .avatar{ margin-bottom: 5px; }
+.post > .tags a{
+    text-decoration: none;
+    color: #FFF;
+    background: #AD0010;
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.post > .tags a:hover{ background: #333; }
 
 /** Profile **/
 .avatar{

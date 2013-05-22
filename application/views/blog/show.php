@@ -10,6 +10,7 @@ if( empty($post) ){
             <?= $this->template->render( 'blog/_author', array('post'=>$post) ) ?>
             <h1><?= $post['title'] ?> <?= post_control($post) ?></h1>            
             <?= $post['full'] ?>
+            <div class="tags"><span class="icon icon-tags"></span>Тэги: <?= tags( $post) ?></div>
         </div>
         <hr/>
         <div class="share">

@@ -8,7 +8,7 @@ function tags( $post ){
         $tag = trim($tag);
         $out[] = '<a href="'.site_url( 'blog/tag/'.$tag ).'">'.$tag.'</a>';
     }
-    return implode( ', ', $out );
+    return implode( ' ', $out );
 }
 
 function avatar( $post ){
