@@ -76,6 +76,8 @@ a.rss{ color: #AD0010 !important; }
     font-size: 10px;
 }
 .post .author .avatar{ margin-bottom: 5px; }
+
+.post > .tags{ margin-top: 10px;}
 .post > .tags a{
     text-decoration: none;
     color: #FFF;
